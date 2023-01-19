@@ -9,9 +9,7 @@ streamlit.text('🥗 Kale, Spinach & Rocket Smoothie')
 streamlit.text('🐔 Hard-Boiled Free-Range Egg')
 streamlit.text('🥑🍞 Avocado Toast')
 
-
 streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
-
 
 #CSV Fruit List load
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
@@ -49,3 +47,8 @@ my_cur.execute("select fruit_name from fruit_load_list")
 my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
+
+#Text input block to add fruits
+streamlit.write("What fruit would you like to add?")
+fruit_choice2 = streamlit.text_input('Type your fruit...','Kiwi')
+streamlit.write('Thanks for adding ', fruit_choice2, '!')
